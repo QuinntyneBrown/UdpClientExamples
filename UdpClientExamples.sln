@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicPointToPoint", "BasicP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPointToPoint.Console", "BasicPointToPoint\BasicPointToPoint.Console\BasicPointToPoint.Console.csproj", "{2A65161E-4C59-4611-B627-AA664CD6BBE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicMultiCast", "BasicMultiCast", "{95D8F549-FF27-44A1-801B-ACD64DBB3584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMultiCast.Console", "BasicMultiCast\BasicMultiCast.Console\BasicMultiCast.Console.csproj", "{91F45CA3-6CFE-480B-8117-6507105B0B21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{2A65161E-4C59-4611-B627-AA664CD6BBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A65161E-4C59-4611-B627-AA664CD6BBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A65161E-4C59-4611-B627-AA664CD6BBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F45CA3-6CFE-480B-8117-6507105B0B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F45CA3-6CFE-480B-8117-6507105B0B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F45CA3-6CFE-480B-8117-6507105B0B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F45CA3-6CFE-480B-8117-6507105B0B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2A65161E-4C59-4611-B627-AA664CD6BBE3} = {49940C2C-C8B9-4AB9-81D1-2D9144BF7170}
+		{91F45CA3-6CFE-480B-8117-6507105B0B21} = {95D8F549-FF27-44A1-801B-ACD64DBB3584}
 	EndGlobalSection
 EndGlobal
