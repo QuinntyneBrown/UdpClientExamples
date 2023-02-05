@@ -18,6 +18,6 @@ _ = Task.Run(async () =>
 
 var bytesToSend = new byte[0];
 
-await udpClient2.SendAsync(bytesToSend, UdpClientFactory.MultiCastGroupIp, 80);
+await udpClient2.SendAsync(bytesToSend, UdpClientFactory.MultiCastGroupIp, UdpClientFactory.BroadcastPort);
 
 await tcs.Task;
