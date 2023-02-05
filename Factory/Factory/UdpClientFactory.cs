@@ -23,7 +23,7 @@ public class UdpClientFactory : IUdpClientFactory
 
                 udpClient.JoinMulticastGroup(IPAddress.Parse(MultiCastGroupIp), IPAddress.Parse($"127.0.0.{BroadcastPort}"));
             }
-            catch(SocketException)
+            catch (SocketException)
             {
                 i++;
             }
