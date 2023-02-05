@@ -7,17 +7,9 @@ string multiCastGroupIp = "224.0.0.1";
 
 var broadCastPort = 80;
 
-var udpClient1 = new UdpClient();
+var udpClient1 = create("127.0.0.1");
 
-udpClient1.Client.Bind(IPEndPoint.Parse($"127.0.0.1:{broadCastPort}"));
-
-udpClient1.JoinMulticastGroup(IPAddress.Parse(multiCastGroupIp), IPAddress.Parse("127.0.0.1"));
-
-var udpClient2 = new UdpClient();
-
-udpClient2.Client.Bind(IPEndPoint.Parse($"127.0.0.2:{broadCastPort}"));
-
-udpClient2.JoinMulticastGroup(IPAddress.Parse(multiCastGroupIp), IPAddress.Parse("127.0.0.2"));
+var udpClient2 = create("127.0.0.2");
 
 _ = Task.Run(async () =>
 {
@@ -29,5 +21,16 @@ _ = Task.Run(async () =>
 var bytesToSend = new byte[0];
 
 await udpClient2.SendAsync(bytesToSend, multiCastGroupIp, broadCastPort);
+
+UdpClient create(string localIp)
+{
+    var udpClient = new UdpClient();
+
+    udpClient.Client.Bind(IPEndPoint.Parse($"{localIp}:{broadCastPort}"));
+
+    udpClient.JoinMulticastGroup(IPAddress.Parse(multiCastGroupIp), IPAddress.Parse(localIp));
+
+    return udpClient;
+}
 
 await tcs.Task;
