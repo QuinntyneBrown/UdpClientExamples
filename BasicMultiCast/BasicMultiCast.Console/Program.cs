@@ -3,7 +3,7 @@
 
 var tcs = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
 
-string multiCastGroupIp = "224.0.0.1";
+var multiCastGroupIp = "224.0.0.1";
 
 var broadCastPort = 80;
 
@@ -18,9 +18,7 @@ _ = Task.Run(async () =>
     tcs.SetResult();
 });
 
-var bytesToSend = new byte[0];
-
-await udpClient2.SendAsync(bytesToSend, multiCastGroupIp, broadCastPort);
+await udpClient2.SendAsync(new byte[0], multiCastGroupIp, broadCastPort);
 
 UdpClient create(string localIp)
 {
